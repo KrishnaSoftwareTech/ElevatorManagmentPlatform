@@ -19,14 +19,8 @@ import com.CentralElevatorManagement.Application.Repository.ElevatorRepository;
 import com.CentralElevatorManagement.Application.Repository.HotelRepository;
 
 import jakarta.persistence.EntityNotFoundException;
-
-
-/**
- * @author krishnakumar
- *
- */
-	@Service
-	public class ElevatorHistoryService {
+@Service
+public class ElevatorHistoryService {
 		
 		@Autowired
 	    private  ElevatorHistoryRepository elevatorHistoryRepository;
@@ -50,9 +44,7 @@ import jakarta.persistence.EntityNotFoundException;
 			}
 			return elevatorHistory;
 		}
-		
-		
-		
+	
 //	    public List<ElevatorHistoryDTO> getElevatorHistoryByHotelIdAndPeriod(Long hotelId, LocalDateTime startTime, LocalDateTime endTime) {
 //	    //	elevatorHistoryRepository.findAllById(null)
 //	        return elevatorHistoryRepository.findByElevator_Hotel_IdAndTravelTimeBetween(hotelId, startTime, endTime);

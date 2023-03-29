@@ -2,6 +2,8 @@ package com.CentralElevatorManagement.Application.Entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -30,6 +32,7 @@ public class Elevator {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "hotel_id", nullable = false)
+    @JsonManagedReference
     private Hotel hotel;
 
     @Enumerated(EnumType.STRING)
@@ -54,90 +57,68 @@ public class Elevator {
     
     
 
-	public Long getId() {
-		return id;
-	}
-
-
-
-	public void setId(Long id) {
+	public Elevator(Long id, Hotel hotel, ElevatorStatus status, Integer currentFloor, Integer destinationFloor,
+			List<Button> insideButtons, List<Button> outsideButtons) {
+		super();
 		this.id = id;
-	}
-
-
-
-	public Hotel getHotel() {
-		return hotel;
-	}
-
-
-
-	public void setHotel(Hotel hotel) {
 		this.hotel = hotel;
-	}
-
-
-
-	public ElevatorStatus getStatus() {
-		return status;
-	}
-
-
-
-	public void setStatus(ElevatorStatus status) {
 		this.status = status;
-	}
-
-
-
-	public Integer getCurrentFloor() {
-		return currentFloor;
-	}
-
-
-
-	public void setCurrentFloor(Integer currentFloor) {
 		this.currentFloor = currentFloor;
-	}
-
-
-
-	public Integer getDestinationFloor() {
-		return destinationFloor;
-	}
-
-
-
-	public void setDestinationFloor(Integer destinationFloor) {
 		this.destinationFloor = destinationFloor;
-	}
-
-
-
-	public List<Button> getInsideButtons() {
-		return insideButtons;
-	}
-
-
-
-	public void setInsideButtons(List<Button> insideButtons) {
 		this.insideButtons = insideButtons;
-	}
-
-
-
-	public List<Button> getOutsideButtons() {
-		return outsideButtons;
-	}
-
-
-
-	public void setOutsideButtons(List<Button> outsideButtons) {
 		this.outsideButtons = outsideButtons;
 	}
 
+public Elevator() {
+	
+}
+//
+	public Long getId() {
+	return id;
+}
+public void setId(Long id) {
+	this.id = id;
+}
+public Hotel getHotel() {
+	return hotel;
+}
 
+public void setHotel(Hotel hotel) {
+	this.hotel = hotel;
+}
+public ElevatorStatus getStatus() {
+	return status;
+}
 
+public void setStatus(ElevatorStatus status) {
+	this.status = status;
+}
+
+public Integer getCurrentFloor() {
+	return currentFloor;
+}
+public void setCurrentFloor(Integer currentFloor) {
+	this.currentFloor = currentFloor;
+}
+public Integer getDestinationFloor() {
+	return destinationFloor;
+}
+public void setDestinationFloor(Integer destinationFloor) {
+	this.destinationFloor = destinationFloor;
+}
+
+public List<Button> getInsideButtons() {
+	return insideButtons;
+}
+public void setInsideButtons(List<Button> insideButtons) {
+	this.insideButtons = insideButtons;
+}
+public List<Button> getOutsideButtons() {
+	return outsideButtons;
+}
+public void setOutsideButtons(List<Button> outsideButtons) {
+	this.outsideButtons = outsideButtons;
+}
 	@Override
 	public String toString() {
 		return "Elevator [id=" + id + ", hotel=" + hotel + ", status=" + status + ", currentFloor=" + currentFloor

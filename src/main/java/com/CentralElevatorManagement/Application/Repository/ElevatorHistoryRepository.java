@@ -13,10 +13,6 @@ import com.CentralElevatorManagement.Application.Entity.ElevatorHistoryDTO;
  *
  */
 public interface ElevatorHistoryRepository  extends JpaRepository<ElevatorHistory, Long>{
-//	List<ElevatorHistoryDTO> findByElevator_Hotel_IdAndTravelTimeBetween(Long hotelId, LocalDateTime startTime, LocalDateTime endTime);
-//
-//    List<ElevatorHistoryDTO> findByElevator_IdAndTravelTimeBetween(Long elevatorId, LocalDateTime startTime, LocalDateTime endTime);
-
-	public ElevatorHistory findByElevatorId(Long elevator_id);
-
+	
+    public ElevatorHistory findByElevatorId(Long elevator_id);
 }

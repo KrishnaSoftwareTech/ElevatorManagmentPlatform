@@ -45,34 +45,4 @@ public class HistoryReportController {
     	
     	return map;
     }
-    
-    
-    
-//    @GetMapping("/hotel/{hotelId}")
-//    public ResponseEntity<List<ElevatorHistoryDTO>> getElevatorHistoryByHotel(@PathVariable Long hotelId,
-//                                                                               @RequestParam LocalDateTime startTime,
-//                                                                               @RequestParam LocalDateTime endTime) {
-//        List<ElevatorHistoryDTO> elevatorHistoryDTOList = elevatorHistoryService.getElevatorHistoryByHotelIdAndPeriod(hotelId, startTime, endTime);
-//        return new ResponseEntity<>(elevatorHistoryDTOList, HttpStatus.OK);
-//    }
-//
-//    @GetMapping("/elevator/{elevatorId}")
-//    public ResponseEntity<List<ElevatorHistoryDTO>> getElevatorHistoryByElevator(@PathVariable Long elevatorId,
-//                                                                                  @RequestParam LocalDateTime startTime,
-//                                                                                  @RequestParam LocalDateTime endTime) {
-//        List<ElevatorHistoryDTO> elevatorHistoryDTOList = elevatorHistoryService.getElevatorHistoryByElevatorIdAndPeriod(elevatorId, startTime, endTime);
-//        return new ResponseEntity<>(elevatorHistoryDTOList, HttpStatus.OK);
-//    }
-    
-//  @GetMapping("/elevators/{elevatorId}/history")
-//  public List<Integer> getElevatorHistory(@PathVariable Long elevatorId,
-//                                          @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
-//                                          @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
-//      Elevator elevator = elevatorRepository.findById(elevatorId)
-//                                            .orElseThrow(() -> new EntityNotFoundException("Elevator not found"));
-//
-//      List<ElevatorHistory> elevatorHistory = elevatorHistoryService..findByElevatorAndTimestampBetween(elevator, startDate.atStartOfDay(), endDate.atTime(LocalTime.MAX));
-//
-//      return elevatorHistory.stream().map(ElevatorHistory::getFloor).collect(Collectors.toList());
-//  }
 }

@@ -28,12 +28,6 @@ public class ElevatorHistory {
     @JoinColumn(name = "elevator_id")
     private Elevator elevator;
     
-//    @Column(name = "start_floor")
-//    private int startFloor;
-//    
-//    @Column(name = "end_floor")
-//    private int endFloor;
-    
     @Column(name = "start_Time")
     private LocalDateTime startTime;
     
